@@ -24,12 +24,32 @@ class enrol_twocheckout_edit_form extends moodleform {
         $mform->setDefault('cost', $plugin->get_config('cost'));
 
         $twocheckoutcurrencies = array('USD' => 'US Dollars',
-                                  'EUR' => 'Euros',
-                                  'JPY' => 'Japanese Yen',
-                                  'GBP' => 'British Pounds',
-                                  'CAD' => 'Canadian Dollars',
-                                  'AUD' => 'Australian Dollars'
-                                 );
+                              'ARS' => 'Argentina Peso',
+                              'AUD' => 'Australian Dollars',
+                              'BRL' => 'Brazilian Real',
+                              'GBP' => 'GBP-Sterlings',
+                              'CAD' => 'Canadian Dollars',
+                              'DKK' => 'Danish Kroner',
+                              'EUR' => 'Euros',
+                              'HKD' => 'Hong Kong Dollars',
+                              'INR' => 'Indian Rupee',
+                              'ILS' => 'Israel Shekel',
+                              'JPY' => 'Japanese Yen',
+                              'LTL' => 'Lithuania Litas',
+                              'MYR' => 'Malaysia Ringgit',
+                              'MXN' => 'Mexican Peso',
+                              'NZD' => 'New Zealand Dollars',
+                              'NOK' => 'Norwegian Kroner',
+                              'PHP' => 'Philippines Peso',
+                              'RON' => 'Romania Leu',
+                              'RUB' => 'Russian Federation Ruble',
+                              'SGD' => 'Singapore Dollar',
+                              'ZAR' => 'South African Rand',
+                              'SEK' => 'Swedish Kroner',
+                              'CHF' => 'Swiss Francs',
+                              'TRY' => 'Turkish Lira',
+                              'AED' => 'United Arab Emirates Dirham'
+                             );
         $mform->addElement('select', 'currency', get_string('currency', 'enrol_twocheckout'), $twocheckoutcurrencies);
         $mform->setDefault('currency', $plugin->get_config('currency'));
 
