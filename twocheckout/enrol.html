@@ -1,0 +1,33 @@
+<div align="center">
+
+<p><?php print_string("paymentrequired") ?></p>
+<p><b><?php echo $instancename; ?></b></p>
+<p><b><?php echo get_string("cost").": {$instance->currency} {$cost}"; ?></b></p>
+<p><img alt="<?php print_string('twocheckoutaccepted', 'enrol_twocheckout') ?>" src="$CFG->wwwroot/enrol/twocheckout/pix/paymentlogo.png" /></p>
+<p><?php print_string("paymentinstant") ?></p>
+
+<form action="https://www.2checkout.com/checkout/purchase" method="post">
+<input type="hidden" name="sid" value="<?php p($this->get_config('twocheckoutseller_id'))?>" />
+<input type="hidden" name="mode" value="2CO" />
+<input type="hidden" name="li_0_name" value="<?php p($coursefullname) ?>" />
+<input type="hidden" name="li_0_product_id" value="<?php p($courseshortname) ?>" />
+<input type="hidden" name="li_0_quantity" value="1" />
+<input type="hidden" name="li_0_price" value="<?php p($cost) ?>" />
+<input type="hidden" name="on0" value="<?php print_string("user") ?>" />
+<input type="hidden" name="os0" value="<?php p($userfullname) ?>" />
+<input type="hidden" name="userid" value="<?php p($USER->id) ?>" />
+<input type="hidden" name="courseid" value="<?php p($course->id) ?>" />
+<input type="hidden" name="instanceid" value="<?php p($instance->id) ?>" />
+<input type="hidden" name="currency_code" value="<?php p($instance->currency) ?>" />
+<input type="hidden" name="amount" value="<?php p($cost) ?>" />
+<input type="hidden" name="x_receipt_link_url" value="<?php echo "$CFG->wwwroot/enrol/twocheckout/return.php?id=$course->id" ?>" />
+<input type="hidden" name="first_name" value="<?php p($userfirstname) ?>" />
+<input type="hidden" name="last_name" value="<?php p($userlastname) ?>" />
+<input type="hidden" name="street_address" value="<?php p($useraddress) ?>" />
+<input type="hidden" name="city" value="<?php p($usercity) ?>" />
+<input type="hidden" name="email" value="<?php p($USER->email) ?>" />
+<input type="hidden" name="country" value="<?php p($USER->country) ?>" />
+<input type="submit" value="<?php print_string("sendpaymentbutton", "enrol_twocheckout") ?>" />
+</form>
+
+</div>
