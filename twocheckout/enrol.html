@@ -6,7 +6,7 @@
 <p><img alt="<?php print_string('twocheckoutaccepted', 'enrol_twocheckout') ?>" src="$CFG->wwwroot/enrol/twocheckout/pix/paymentlogo.png" /></p>
 <p><?php print_string("paymentinstant") ?></p>
 
-<form action="https://www.2checkout.com/checkout/purchase" method="post">
+<form action="https://beta.2checkout.com/checkout/purchase" method="post">
 <input type="hidden" name="sid" value="<?php p($this->get_config('twocheckoutseller_id'))?>" />
 <input type="hidden" name="mode" value="2CO" />
 <input type="hidden" name="li_0_name" value="<?php p($coursefullname) ?>" />
@@ -27,7 +27,11 @@
 <input type="hidden" name="city" value="<?php p($usercity) ?>" />
 <input type="hidden" name="email" value="<?php p($USER->email) ?>" />
 <input type="hidden" name="country" value="<?php p($USER->country) ?>" />
+<input type="hidden" name="state" value="<?php p($USER->profile['state']) ?>" />
+<input type="hidden" name="zip" value="<?php p($USER->profile['zip']) ?>" />
 <input type="submit" value="<?php print_string("sendpaymentbutton", "enrol_twocheckout") ?>" />
 </form>
-
+<script src="https://beta.2checkout.com/static/checkout/javascript/direct.js"></script>
 </div>
+
+<?php var_dump($USER) ?>

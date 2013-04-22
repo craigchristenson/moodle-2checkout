@@ -17,6 +17,8 @@ Integrate Moodle 2.4.x with 2Checkout
 10. Enter your desired enrollment duration.
 11. Click **Save Changes**.
 
+(Please Note: Direct Checkout requires the buyer's full billing address so you must add an additional field "state" to the user registration form to use Direct Checkout.)
+
 ### 2Checkout Settings
 
 1. Sign in to your 2Checkout account. 
