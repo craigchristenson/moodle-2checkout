@@ -1,4 +1,4 @@
-### _For a discount on 2Checkout’s monthly fees, enter promo code:  moodle2co  during signup._
+### _[Signup free with 2Checkout and start selling!](https://www.2checkout.com/referral?r=git2co)_
 
 Integrate Moodle 2.4.x with 2Checkout
 ----------------------------------------
