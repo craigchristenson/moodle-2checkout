@@ -1,6 +1,6 @@
 ### _[Signup free with 2Checkout and start selling!](https://www.2checkout.com/referral?r=git2co)_
 
-Integrate Moodle 2.4.x with 2Checkout
+Integrate Moodle 3.x with 2Checkout
 ----------------------------------------
 
 ### Moodle Settings

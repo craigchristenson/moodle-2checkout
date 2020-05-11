@@ -1,8 +1,6 @@
 <?php
-
 require("../../config.php");
 require_once($CFG->dirroot.'/enrol/twocheckout/lib.php');
-require_once($CFG->libdir.'/eventslib.php');
 require_once($CFG->libdir.'/enrollib.php');
 require_once($CFG->libdir . '/filelib.php');
 
@@ -116,7 +114,7 @@ if (is_enrolled($context, NULL, '', true)) {
         $a->coursename = format_string($course->fullname, true, array('context' => $coursecontext));
         $a->profileurl = "$CFG->wwwroot/user/view.php?id=$user->id";
 
-        $eventdata = new stdClass();
+        $eventdata = new \core\message\message();
         $eventdata->modulename        = 'moodle';
         $eventdata->component         = 'enrol_twocheckout';
         $eventdata->name              = 'twocheckout_enrolment';
@@ -136,7 +134,7 @@ if (is_enrolled($context, NULL, '', true)) {
         $a->course = format_string($course->fullname, true, array('context' => $coursecontext));
         $a->user = fullname($user);
 
-        $eventdata = new stdClass();
+        $eventdata = new \core\message\message();
         $eventdata->modulename        = 'moodle';
         $eventdata->component         = 'enrol_twocheckout';
         $eventdata->name              = 'twocheckout_enrolment';
@@ -156,7 +154,7 @@ if (is_enrolled($context, NULL, '', true)) {
         $a->user = fullname($user);
         $admins = get_admins();
         foreach ($admins as $admin) {
-            $eventdata = new stdClass();
+            $eventdata = new \core\message\message();
             $eventdata->modulename        = 'moodle';
             $eventdata->component         = 'enrol_twocheckout';
             $eventdata->name              = 'twocheckout_enrolment';
@@ -199,7 +197,7 @@ function message_twocheckout_error_to_admin($subject, $data) {
         $message .= "$key => $value\n";
     }
 
-    $eventdata = new stdClass();
+    $eventdata = new \core\message\message();
     $eventdata->modulename        = 'moodle';
     $eventdata->component         = 'enrol_twocheckout';
     $eventdata->name              = 'twocheckout_enrolment';
